@@ -45,6 +45,16 @@ Next.js 16, React 19, TypeScript, Tailwind CSS 4, FFmpeg/FFprobe, yt-dlp, Faster
 
 The application runs as two local processes: a Python AI/media service on port `5000` and a Next.js dashboard on port `3010`. Keep both terminals open while generating clips.
 
+### Windows one-click setup and startup
+
+For the first run, double-click [`setup-local.bat`](./setup-local.bat). It installs the Node dependencies, creates `.venv`, installs the Python packages, downloads the local models, creates `.env.local`, and opens that file in Notepad. Add your real `OPENAI_API_KEY`, save, and close Notepad.
+
+After setup, double-click [`start-local.bat`](./start-local.bat) whenever you want to use the project. It validates the installation, opens the Whisper service and Next.js dashboard in two labeled terminal windows, then opens [http://localhost:3010](http://localhost:3010) in your browser.
+
+To stop the application, press `Ctrl+C` in both service windows or close both windows. You only need to run `setup-local.bat` again when dependencies change or an earlier setup did not finish.
+
+The remaining steps below show the same process manually and are useful for macOS/Linux or troubleshooting.
+
 ### 1. Clone and enter the repository
 
 ```bash
@@ -196,6 +206,8 @@ src/lib/ffmpeg.ts                Reframing, watermark handling, and encoding
 src/lib/subtitles.ts             Word-level ASS captions
 prompts/clipper.md               Version-controlled AI instructions
 whisper-service/                 Faster-Whisper and YuNet/OpenCV service
+setup-local.bat                  One-time Windows dependency/model setup
+start-local.bat                  One-click Windows launcher for both services
 ```
 
 Runtime files are written to `tmp/`, `public/workspace/`, and `public/output/`. They are excluded from version control.
