@@ -1,0 +1,11 @@
+flask
+flask-cors
+faster-whisper
+torch
+torchvision
+torchaudio
+opencv-python
+mediapipe
+numpy
+
+

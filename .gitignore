@@ -1,0 +1,15 @@
+.env
+.env.local
+.env.*.local
+.next/
+node_modules/
+tmp/
+bin/
+public/output/
+public/workspace/
+*.tsbuildinfo
+cookies.txt
+__pycache__/
+*.py[cod]
+.venv/
+venv/
